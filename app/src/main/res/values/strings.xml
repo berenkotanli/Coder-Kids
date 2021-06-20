@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Capstone-Project</string>
+    <string name="search_string">Kurs ara</string>
+    <string name="courses_text">Kategorilere göz at</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
