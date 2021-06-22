@@ -10,7 +10,7 @@
         android:icon="@drawable/ic_baseline_campaign_24"
         android:title="Kampanyalar" />
     <item
-        android:id="@+id/chartPageFragment"
+        android:id="@+id/cartPageFragment"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
         android:title="Sepet" />
     <item

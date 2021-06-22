@@ -28,14 +28,14 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(bottomBar,navHostFragment.navController)
 
         pdaoi=ApiUtils.getProductsDaoInterface()
-        createProduct()
-        //getProducts()
+        //createProduct()
+        getProducts()
 
 
 
     }
     fun createProduct(){
-        pdaoi.createProduct("berenkotanli","Scratch Eğitimi","219,99","Scratch, küçük yaştaki çocuklar için tercih edilen bir giriş programlama platformudur. Scratch ile Animasyon ve Oyunlar, programlamayı öğrenmek isteyen çocuklar için harika bir giriş dersidir. Öğrenciler, Scratch'in kullanımı kolay arayüzünü kullanarak güçlü programlama kavramlarını öğrenecekler. Her ders, değişkenleri kullanma ve oluşturma, döngüleri uygulama ve koşullu ifadeleri kullanma gibi programlama için çok önemli olan becerileri öğreten bir oyun veya animasyon oluşturmaya harcanır. Dersin sonunda öğrenciler basit Scratch oyunlarını ve animasyonlarını kodlama becerisine sahip olacaklardır.","https://drive.google.com/file/d/1phLSklIyFOClt_I-lAs1sJ1kMEKVA5c6/view?usp=sharing",0,0,55)
+        pdaoi.createProduct("berenkotanli","Arduino Eğitimi","219,99","Arduino, temel elektronik, otomasyon ve robotik becerilerine sahip hem çocuklar hem de yetişkinler için mükemmel bir seçimdir. Arduino platformu temelinde bir robot araba, küçük bir lamba, bir akıllı ev elemanı monte etmek ve programlamak mümkündür. Programlamanın kendisi, C programlama diline dayanan Arduino IDE adlı özel bir ortam aracılığıyla etkinleştirilir. Bu eğitimin sonunda öğrenciler robotik kodlamanın temellerini ve önemli bilgisayar bilimi konularını öğrenecek. Bunun için Autodesk tarafından tasarlanan eğlenceli programlama ve elektronik simülatör aracı Tinkercad kullanılacak. Arduino'nun nasıl programlanacağı, sensörleri, elektrik motorlarının nasıl kullanılacağı ve gerçek hayattaki elektronik devrelerinin nasıl oluşturulacağı öğrenilecektir. Bu eğitim, derslerin sıkıcı veya karmaşık ayrıntılarına girmeden belirli programlama ve elektronik kavramlarını hedefleyecek şekilde dikkatlice tasarlandı. Herhangi bir programlama veya elektronikle ilgili deneyim gerektirmez.","1MpvnUofF6_XoCZS4F4uTFNyF5lZflGQw",0,0,10)
                 .enqueue(object : Callback<CRUDResponse>{
                     override fun onResponse(call: Call<CRUDResponse>?, response: Response<CRUDResponse>) {
                         Log.e("Başarı",response.body().success.toString())
@@ -54,14 +54,13 @@ class MainActivity : AppCompatActivity() {
                 val product=response.body().products
                 for(p in product){
 
-
                     Log.e("************","************")
 
-                    Log.e("2",p.urun_adi)
+                    Log.e("1",p.urun_adi)
                     Log.e("2",p.urun_aciklama)
-                    Log.e("2",p.urun_fiyat)
-                    Log.e("2",p.urun_gorsel_url)
-                    Log.e("2",p.urun_indirimli_mi.toString())
+                    Log.e("3",p.urun_fiyat)
+                    Log.e("4",p.urun_gorsel_url)
+                    Log.e("5",p.urun_indirimli_mi.toString())
                 }
             }
 

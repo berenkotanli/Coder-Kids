@@ -8,13 +8,13 @@ import android.view.ViewGroup
 import com.beren.capstone_project.R
 
 
-class ChartPageFragment : Fragment() {
+class CartPageFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val design = inflater.inflate(R.layout.fragment_chart_page, container, false)
+        val design = inflater.inflate(R.layout.fragment_cart_page, container, false)
         return design
     }
 

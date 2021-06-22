@@ -4,8 +4,9 @@ import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.beren.capstone_project.adapters.ViewPagerAdapter
-import com.beren.capstone_project.fragments.LoginTabFragment
-import com.beren.capstone_project.fragments.SignupTabFragment
+import com.beren.capstone_project.fragments.LoginFragment
+import com.beren.capstone_project.fragments.SignupFragment
+
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -23,8 +24,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setUpTabs(){
         val adapter= ViewPagerAdapter(supportFragmentManager)
-        adapter.addFragment(LoginTabFragment(),title = "Login")
-        adapter.addFragment(SignupTabFragment(),title = "Sign Up")
+        adapter.addFragment(LoginFragment(),title = "Login")
+        adapter.addFragment(SignupFragment(),title = "Sign Up")
         view_pager.adapter=adapter
         tab_layout.setupWithViewPager(view_pager)
     }

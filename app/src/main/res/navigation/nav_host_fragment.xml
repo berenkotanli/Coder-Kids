@@ -16,10 +16,10 @@
         android:label="fragment_campaigns_page"
         tools:layout="@layout/fragment_campaigns_page" />
     <fragment
-        android:id="@+id/chartPageFragment"
-        android:name="com.beren.capstone_project.fragments.ChartPageFragment"
+        android:id="@+id/cartPageFragment"
+        android:name="com.beren.capstone_project.fragments.CartPageFragment"
         android:label="fragment_chart_page"
-        tools:layout="@layout/fragment_chart_page" />
+        tools:layout="@layout/fragment_cart_page" />
     <fragment
         android:id="@+id/profilePageFragment"
         android:name="com.beren.capstone_project.fragments.ProfilePageFragment"
