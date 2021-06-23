@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         pdaoi=ApiUtils.getProductsDaoInterface()
         //createProduct()
-        getProducts()
+        //getProducts()
 
 
 

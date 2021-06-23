@@ -3,13 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_host_fragment"
-    app:startDestination="@id/homePageFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/homePageFragment"
         android:name="com.beren.capstone_project.fragments.HomePageFragment"
         android:label="fragment_home_page"
-        tools:layout="@layout/fragment_home_page" />
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/actionToDetails"
+            app:destination="@id/courseDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/campaignsPageFragment"
         android:name="com.beren.capstone_project.fragments.CampaignsPageFragment"
@@ -25,4 +29,23 @@
         android:name="com.beren.capstone_project.fragments.ProfilePageFragment"
         android:label="fragment_profile_page"
         tools:layout="@layout/fragment_profile_page" />
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.beren.capstone_project.fragments.SignupFragment"
+        android:label="SignupFragment"
+        tools:layout="@layout/fragment_signup"/>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.beren.capstone_project.fragments.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login"/>
+    <fragment
+        android:id="@+id/courseDetailsFragment"
+        android:name="com.beren.capstone_project.fragments.CourseDetailsFragment"
+        android:label="CourseDetailsFragment"
+        tools:layout="@layout/fragment_course_details">
+        <argument
+            android:name="courseDetailsObject"
+            app:argType="com.beren.capstone_project.entity.Products" />
+    </fragment>
 </navigation>

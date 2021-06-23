@@ -2,6 +2,7 @@ package com.beren.capstone_project.entity
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Products(@SerializedName("id")
                     @Expose
@@ -26,5 +27,5 @@ data class Products(@SerializedName("id")
                     var sepet_durum:Int,
                     @SerializedName("urun_indirimli_mi")
                     @Expose
-                    var urun_indirimli_mi:Int) {
+                    var urun_indirimli_mi:Int):Serializable {
 }
