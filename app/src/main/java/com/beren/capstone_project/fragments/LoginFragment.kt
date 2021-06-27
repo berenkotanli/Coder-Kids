@@ -1,13 +1,16 @@
 package com.beren.capstone_project.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import com.beren.capstone_project.MainActivity
 import com.beren.capstone_project.R
 import com.beren.capstone_project.databinding.FragmentLoginBinding
 import com.beren.capstone_project.entity.UsersResponse
@@ -34,30 +37,7 @@ class LoginFragment : Fragment() {
         // login()
         return design.root
     }
-    fun login(){
-        udaoi.login("berenkotanli@gmail.com","beren123").enqueue(object : Callback<UsersResponse> {
-            override fun onResponse(call: Call<UsersResponse>?, response: Response<UsersResponse>) {
-                val user=response.body().users
-                for(i in user){
-                    if(i.deger==1){
-                        Log.e("*********","*******")
-                        Log.e("1",i.ad_soyad)
-                        Log.e("2",i.mail_adres)
-                        Log.e("3",i.telefon)
-                        Log.e("4",i.sifre)
-                        Log.e("5",i.deger.toString())
-                    }else if(i.deger==0){
-                        Log.e("1","giriş yapılamadı")
-                    }
-                }
 
-            }
-
-            override fun onFailure(call: Call<UsersResponse>?, t: Throwable?) {
-            }
-
-        })
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,6 +46,19 @@ class LoginFragment : Fragment() {
     }
     fun buttonLogin(user_email:String, user_password:String){
         viewModel.login(user_email,user_password)
+        viewModel.success.observe(viewLifecycleOwner, {
+            println(it)
+            if (it == 1) {
+                val intent = Intent(getActivity(), MainActivity::class.java)
+                getActivity()?.startActivity(intent)
+            } else if (it == 0) {
+                Toast.makeText(requireContext(), "Giriş Yapılamadı!", Toast.LENGTH_SHORT).show()
+            }
+        })
+        //sayfa geçişi
+
+
+        //Navigation.findNavController(view).navigate(R.id.transitionHomePageFragment)
     }
 
     }

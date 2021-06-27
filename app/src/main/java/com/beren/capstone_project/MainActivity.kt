@@ -29,13 +29,13 @@ class MainActivity : AppCompatActivity() {
 
         pdaoi=ApiUtils.getProductsDaoInterface()
         //createProduct()
-        //getProducts()
+      // getProducts()
 
 
 
     }
-    fun createProduct(){
-        pdaoi.createProduct("berenkotanli","Arduino Eğitimi","219,99","Arduino, temel elektronik, otomasyon ve robotik becerilerine sahip hem çocuklar hem de yetişkinler için mükemmel bir seçimdir. Arduino platformu temelinde bir robot araba, küçük bir lamba, bir akıllı ev elemanı monte etmek ve programlamak mümkündür. Programlamanın kendisi, C programlama diline dayanan Arduino IDE adlı özel bir ortam aracılığıyla etkinleştirilir. Bu eğitimin sonunda öğrenciler robotik kodlamanın temellerini ve önemli bilgisayar bilimi konularını öğrenecek. Bunun için Autodesk tarafından tasarlanan eğlenceli programlama ve elektronik simülatör aracı Tinkercad kullanılacak. Arduino'nun nasıl programlanacağı, sensörleri, elektrik motorlarının nasıl kullanılacağı ve gerçek hayattaki elektronik devrelerinin nasıl oluşturulacağı öğrenilecektir. Bu eğitim, derslerin sıkıcı veya karmaşık ayrıntılarına girmeden belirli programlama ve elektronik kavramlarını hedefleyecek şekilde dikkatlice tasarlandı. Herhangi bir programlama veya elektronikle ilgili deneyim gerektirmez.","1MpvnUofF6_XoCZS4F4uTFNyF5lZflGQw",0,0,10)
+ /*   fun createProduct(){
+        pdaoi.createProduct("berenkotanli","Uğur Böceği Eğitimi","499,99","Uğur Böceği çocukların kullanması için tasarlanmış yeni bir robottur. Renkli, kolay kullanımlı ve arkadaş canlısı bu robot, sıralama, tahmin ve problem çözmeyi çocuklara öğretmek için mükemmel bir araçtır. Sağlam yapısı ve renkli tasarımı sayesinde Uğur Böceği, çocukları oynamaya teşvik eder. Yön tuşları ile 40'a kadar komut Uğur Böceği'ne gönderilerek ileri, geri, sağ ve sola hareketi sağlanabilir. Yeşil renkli GO butonuna basıldığında Uğur Böceği harekete başlar. Uğur Böceği her bir komut adımında ışık ve sesle bildirim sağlayarak yazılmış olan programın adım adım takibini sağlar. Programın bitişini de aynı şekilde ışık ve sesli bir şekilde bildirir. Çocuklar Uğur Böceği ile tekrar tekrar oynamak isteyecek ve daha yaratıcı ve karmaşık programlar (komut sıralamaları) oluşturmaya yönelecektir. Uğur Böceği 6\" (~15cm) uzunluğunda adımlar ve 90 derece dönüşler ile hareket eder. Kompakt boyutu ve dayanıklı malzemesi sayesinde sınıf ortamlarında hiçbir problem olmadan kullanılabilir.", "138LmJR4Sixy64ijseJTpJpI4fOSIAs3O",0,0,10)
                 .enqueue(object : Callback<CRUDResponse>{
                     override fun onResponse(call: Call<CRUDResponse>?, response: Response<CRUDResponse>) {
                         Log.e("Başarı",response.body().success.toString())
@@ -57,6 +57,7 @@ class MainActivity : AppCompatActivity() {
                     Log.e("************","************")
 
                     Log.e("1",p.urun_adi)
+                    Log.e("7",p.id.toString())
                     Log.e("2",p.urun_aciklama)
                     Log.e("3",p.urun_fiyat)
                     Log.e("4",p.urun_gorsel_url)
@@ -69,5 +70,5 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-    }
+    }*/
 }

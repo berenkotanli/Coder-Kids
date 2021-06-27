@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_host_fragment"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/homePageFragment">
 
     <fragment
         android:id="@+id/homePageFragment"
@@ -48,4 +48,9 @@
             android:name="courseDetailsObject"
             app:argType="com.beren.capstone_project.entity.Products" />
     </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.beren.capstone_project.LoginActivity"
+        android:label="LoginActivity"
+        tools:layout="@layout/activity_login"/>
 </navigation>
