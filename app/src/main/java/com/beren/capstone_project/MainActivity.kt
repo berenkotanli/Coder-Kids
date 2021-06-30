@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         pdaoi=ApiUtils.getProductsDaoInterface()
         //createProduct()
-      // getProducts()
+       getProducts()
 
 
 
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 })
-    }
+    }*/
     fun getProducts(){
         pdaoi.getProducts("berenkotanli").enqueue(object : Callback<ProductsResponse>{
             override fun onResponse(call: Call<ProductsResponse>?, response: Response<ProductsResponse>) {
@@ -62,6 +62,7 @@ class MainActivity : AppCompatActivity() {
                     Log.e("3",p.urun_fiyat)
                     Log.e("4",p.urun_gorsel_url)
                     Log.e("5",p.urun_indirimli_mi.toString())
+                    Log.e("6",p.sepet_durum.toString())
                 }
             }
 
@@ -70,5 +71,5 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
-    }*/
+    }
 }

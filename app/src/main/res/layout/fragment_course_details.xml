@@ -6,6 +6,9 @@
         <variable
             name="productObject"
             type="com.beren.capstone_project.entity.Products" />
+        <variable
+            name="detailsFragment"
+            type="com.beren.capstone_project.fragments.CourseDetailsFragment" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -126,14 +129,13 @@
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
                     android:text="Add to cart"
+                    android:onClick="@{()->detailsFragment.addToCart(productObject.id,1)}"
                     android:textAllCaps="false"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/course_detail_text" />
-
-
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

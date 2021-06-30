@@ -25,4 +25,10 @@ interface ProductsDaoInterface {
     @FormUrlEncoded
     fun getProducts(@Field("satici_adi")satici_adi:String): Call<ProductsResponse>
 
+    @POST("sepet_durum_degistir.php")
+    @FormUrlEncoded
+    fun updateCart(@Field("id")id:Int,@Field("sepet_durum")cart_status:Int):Call<CRUDResponse>
+
+
+
 }
