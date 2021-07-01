@@ -6,6 +6,9 @@
         <variable
             name="adapter"
             type="com.beren.capstone_project.adapters.ProductsAdapter" />
+        <variable
+            name="ToolbarTitle"
+            type="String" />
 
 
     </data>
@@ -15,16 +18,22 @@
         android:layout_height="match_parent"
         tools:context=".fragments.HomePageFragment">
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="27dp"
-            android:layout_height="34dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarHome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="bottom"
+
+            android:layout_margin="15dp"
+
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:labelVisibilityMode="unlabeled"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
+            app:title="@{ToolbarTitle}" />
 
         <TextView
             android:id="@+id/textView"
@@ -32,12 +41,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginLeft="18dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_bold"
             android:text="Hoşgeldin Beren,"
             android:textColor="@color/dark_text_color"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbarHome" />
 
         <EditText
             android:id="@+id/editTextSearch"
@@ -45,7 +55,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/search_ic"
@@ -67,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_bold"
             android:text="@string/courses_text"
             android:textColor="@color/dark_text_color"
@@ -82,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_bold"
             android:text="Senin için seçtiklerimiz"
             android:textColor="@color/dark_text_color"
@@ -94,6 +104,7 @@
             android:id="@+id/rv_foryou"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginTop="16dp"
             app:adapter="@{adapter}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +115,7 @@
             android:id="@+id/imageView"
             android:layout_width="100dp"
             android:layout_height="98dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:src="@drawable/firstamigo"
             app:layout_constraintEnd_toStartOf="@+id/imageView4"
             app:layout_constraintHorizontal_bias="0.5"
@@ -128,7 +139,7 @@
             android:id="@+id/imageView4"
             android:layout_width="100dp"
             android:layout_height="98dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView5"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -152,7 +163,7 @@
             android:id="@+id/imageView5"
             android:layout_width="100dp"
             android:layout_height="98dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageView4"

@@ -29,6 +29,9 @@ interface ProductsDaoInterface {
     @FormUrlEncoded
     fun updateCart(@Field("id")id:Int,@Field("sepet_durum")cart_status:Int):Call<CRUDResponse>
 
+    @POST("indirimli_urun_durum_degistir.php")
+    @FormUrlEncoded
+    fun updateCampaign(@Field("id")id:Int,@Field("urun_indirimli_mi")discount:Int):Call<CRUDResponse>
 
 
 }

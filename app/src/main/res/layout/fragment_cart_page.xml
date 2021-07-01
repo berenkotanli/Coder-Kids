@@ -10,19 +10,57 @@
             name="cartadapter"
             type="com.beren.capstone_project.adapters.CartItemsAdapter" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.CartPageFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_cart_items"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:adapter="@{cartadapter}"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.CartPageFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cart_items"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:adapter="@{cartadapter}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="32dp"
+            android:text="Siparişi Tamamla"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginBottom="45dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Toplam:"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView12"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="toplam"
+            app:layout_constraintEnd_toStartOf="@+id/button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView10"
+            tools:layout_editor_absoluteY="590dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

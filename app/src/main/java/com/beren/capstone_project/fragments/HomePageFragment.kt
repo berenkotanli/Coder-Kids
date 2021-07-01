@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -29,27 +30,16 @@ class HomePageFragment : Fragment() {
 
          design = DataBindingUtil.inflate(inflater, R.layout.fragment_home_page, container, false)
 
-        /*val layoutManager = LinearLayoutManager( getActivity())
-        layoutManager.orientation = LinearLayoutManager.HORIZONTAL
-
-        design.rvForyou.layoutManager=layoutManager*/
+        design.toolbarTitle="CODER KIDS"
+        (activity as AppCompatActivity).setSupportActionBar(design.toolbarHome)
 
 
         viewModel.productsList.observe(viewLifecycleOwner, { productsList ->
-
              adapter = ProductsAdapter(requireContext(), productsList)
-            // design.adapter = adapter
              design.adapter = adapter
          })
-       // design.rvCourses.layoutManager=LinearLayoutManager(activity,LinearLayoutManager.VERTICAL,false)
-        //mRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL ,false)
 
-
-      /*  var url="https://docs.google.com/uc?id=1phLSklIyFOClt_I-lAs1sJ1kMEKVA5c6"
-        var id = design.foto
-        Picasso.get().load(url).into(id)*/
         design.rvForyou.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
-
 
         return design.root
     }
@@ -59,10 +49,5 @@ class HomePageFragment : Fragment() {
         val temp: HomePageFragmentViewModel by viewModels()
         viewModel=temp
     }
-   /* fun cardClicked(view:View){
-        Navigation.findNavController(view).navigate(R.id.actionToDetails)
-    }*/
-
-
 
 }

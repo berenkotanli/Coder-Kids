@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.beren.capstone_project.R
 import com.beren.capstone_project.adapters.CartItemsAdapter
@@ -40,8 +41,8 @@ class CartPageFragment : Fragment() {
             adapter = CartItemsAdapter(requireContext(), cartItemsList,viewModel)
             design.cartadapter = adapter
         })
-
         design.rvCartItems.layoutManager = StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.HORIZONTAL)
+        design.rvCartItems.addItemDecoration(DividerItemDecoration(activity,StaggeredGridLayoutManager.HORIZONTAL))
         return design.root
     }
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -24,8 +24,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.main_host_fragment) as NavHostFragment
-        NavigationUI.setupWithNavController(bottomBar,navHostFragment.navController)
+        val navhost=supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
+        NavigationUI.setupWithNavController(bottomBar,navhost.navController)
+
+      /*  val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        NavigationUI.setupWithNavController(bottomBar,navHostFragment.navController)*/
+
+
 
         pdaoi=ApiUtils.getProductsDaoInterface()
         //createProduct()

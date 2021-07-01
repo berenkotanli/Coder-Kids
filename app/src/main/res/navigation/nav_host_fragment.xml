@@ -30,16 +30,6 @@
         android:label="fragment_profile_page"
         tools:layout="@layout/fragment_profile_page" />
     <fragment
-        android:id="@+id/signupFragment"
-        android:name="com.beren.capstone_project.fragments.SignupFragment"
-        android:label="SignupFragment"
-        tools:layout="@layout/fragment_signup"/>
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.beren.capstone_project.fragments.LoginFragment"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login"/>
-    <fragment
         android:id="@+id/courseDetailsFragment"
         android:name="com.beren.capstone_project.fragments.CourseDetailsFragment"
         android:label="CourseDetailsFragment"
@@ -48,9 +38,4 @@
             android:name="courseDetailsObject"
             app:argType="com.beren.capstone_project.entity.Products" />
     </fragment>
-    <activity
-        android:id="@+id/loginActivity"
-        android:name="com.beren.capstone_project.LoginActivity"
-        android:label="LoginActivity"
-        tools:layout="@layout/activity_login"/>
 </navigation>

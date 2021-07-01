@@ -55,7 +55,7 @@ class LoginFragment : Fragment() {
                 Toast.makeText(requireContext(), "Giriş Yapılamadı!", Toast.LENGTH_SHORT).show()
             }
         })
-        //sayfa geçişi
+       // LoginFragmentDirections.actionToProfile()
 
 
         //Navigation.findNavController(view).navigate(R.id.transitionHomePageFragment)

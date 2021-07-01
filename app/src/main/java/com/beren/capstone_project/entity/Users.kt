@@ -2,6 +2,7 @@ package com.beren.capstone_project.entity
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Users(@SerializedName("deger")
                 @Expose
@@ -17,5 +18,5 @@ data class Users(@SerializedName("deger")
                  var ad_soyad:String,
                  @SerializedName("telefon")
                  @Expose
-                 var telefon:String,) {
+                 var telefon:String):Serializable {
 }

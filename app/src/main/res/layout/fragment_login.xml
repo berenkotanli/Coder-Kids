@@ -6,6 +6,9 @@
         <variable
             name="userLoginFragment"
             type="com.beren.capstone_project.fragments.LoginFragment" />
+        <variable
+            name="usersObject"
+            type="com.beren.capstone_project.entity.Users" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
