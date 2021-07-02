@@ -16,4 +16,7 @@
     <color name="main_blue">#407BFF</color>
     <color name="malibu_blue">#7CACFC</color>
     <color name="bright_blue">#448CFC</color>
+    <color name="badge_red">#F63D15</color>
+
+
 </resources>
