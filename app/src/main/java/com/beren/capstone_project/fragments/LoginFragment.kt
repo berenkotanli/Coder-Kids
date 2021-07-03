@@ -66,11 +66,11 @@ class LoginFragment : Fragment() {
                             putString("STRING_PHONE",i.telefon)
                         }
                     }?.apply()
-                    Toast.makeText(requireContext(),"data saved",Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(),"Giriş başarılı",Toast.LENGTH_LONG).show()
 
                 })
             } else if (it == 0) {
-                Toast.makeText(requireContext(), "Giriş Yapılamadı!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Şifre veya e-posta hatalı", Toast.LENGTH_SHORT).show()
             }
 
         })
