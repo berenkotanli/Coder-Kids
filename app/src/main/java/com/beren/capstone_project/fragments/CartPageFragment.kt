@@ -70,6 +70,7 @@ class CartPageFragment() : Fragment() {
 
     }
 
+
     fun deleteCartItem(id:Int,cart_status:Int){
         viewModel.deleteCartItem(id,cart_status)
         viewModel.success.observe(viewLifecycleOwner,{

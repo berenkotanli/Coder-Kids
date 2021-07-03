@@ -6,10 +6,13 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.beren.capstone_project.R
@@ -41,9 +44,34 @@ class HomePageFragment : Fragment() {
              adapter = ProductsAdapter(requireContext(), productsList)
              design.adapter = adapter
          })
-
+        design.imageViewkodlama.setOnClickListener {
+            val view=View.inflate(requireContext(),R.layout.dialog_view,null)
+            val builder=AlertDialog.Builder(requireContext())
+            builder.setView(view)
+            val dialog=builder.create()
+            dialog.show()
+            dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        }
+        design.imageView4.setOnClickListener {
+            val view=View.inflate(requireContext(),R.layout.dialog_view_two,null)
+            val builder=AlertDialog.Builder(requireContext())
+            builder.setView(view)
+            val dialog=builder.create()
+            dialog.show()
+            dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        }
+        design.imageView5.setOnClickListener {
+            val view=View.inflate(requireContext(),R.layout.dialog_view_three,null)
+            val builder=AlertDialog.Builder(requireContext())
+            builder.setView(view)
+            val dialog=builder.create()
+            dialog.show()
+            dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        }
+        design.homepagecart.setOnClickListener {
+            findNavController().navigate(R.id.actionToCart)
+        }
         design.rvForyou.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
-
         return design.root
     }
 
@@ -53,10 +81,6 @@ class HomePageFragment : Fragment() {
         viewModel=temp
         setHasOptionsMenu(true)
     }
-    /*override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.toolbar_item, menu)
-    }*/
-
 
     fun loadData(){
         val sharedPreferences= context?.getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)

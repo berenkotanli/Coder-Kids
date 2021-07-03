@@ -13,6 +13,9 @@
         <action
             android:id="@+id/actionToDetails"
             app:destination="@id/courseDetailsFragment" />
+        <action
+            android:id="@+id/actionToCart"
+            app:destination="@id/cartPageFragment" />
     </fragment>
     <fragment
         android:id="@+id/campaignsPageFragment"
