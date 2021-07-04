@@ -44,6 +44,7 @@ class CartPageFragment() : Fragment() {
             startActivity(myIntent)
         }
 
+
       //  design.emptyTxt
       /*  val swipegesture= object :SwipeGesture(requireContext()){
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
@@ -55,12 +56,17 @@ class CartPageFragment() : Fragment() {
         val touchHelper= ItemTouchHelper(swipegesture)
         touchHelper.attachToRecyclerView(rv_cart_items)
 */
+       // var totalPrice=0.00
         viewModel.cartItemsList.observe(viewLifecycleOwner, { cartItemsList ->
             adapter = CartItemsAdapter(requireContext(), cartItemsList,viewModel)
             design.cartadapter = adapter
+          /*  for (i in cartItemsList){
+                totalPrice=totalPrice + i.urun_fiyat.toInt()
+            }*/
         })
+            //design.totalpricecart.text=totalPrice.toString()
         design.rvCartItems.layoutManager = LinearLayoutManager(requireContext())
-        design.rvCartItems.addItemDecoration(DividerItemDecoration(activity,LinearLayoutManager.VERTICAL))
+      //  design.rvCartItems.addItemDecoration(DividerItemDecoration(activity,LinearLayoutManager.VERTICAL))
 
      /*  viewModel.cartItemsList.observe(viewLifecycleOwner,{
            if (it.size==0){

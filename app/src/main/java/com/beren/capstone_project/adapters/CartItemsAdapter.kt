@@ -33,7 +33,6 @@ class CartItemsAdapter (var mContext: Context, var productList: List<Products>,v
         val product=productList.get(position)
         holder.design.cartItemObject=product
 
-
         val sharedPreferences= mContext?.getSharedPreferences("sharedPref",Context.MODE_PRIVATE)
         val editor= sharedPreferences?.edit()
         editor?.apply{
@@ -43,8 +42,12 @@ class CartItemsAdapter (var mContext: Context, var productList: List<Products>,v
         var url = "https://docs.google.com/uc?id="+product.urun_gorsel_url
         var id=holder.design.imageView
         Picasso.get().load(url).into(id);
-
         holder.design.title2Txt.text = product.urun_adi
+      /*  var totalprice=0
+        for (i in productList){
+            totalprice=totalprice+i.urun_fiyat.toInt()
+        }
+        holder.design.totalpricecart.text=totalPrice.toString()*/
 
         holder.design.deleteicon.setOnClickListener {
             Snackbar.make(it,"Ürünü silmek istiyor musunuz?",Snackbar.LENGTH_LONG)
