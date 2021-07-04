@@ -8,10 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.beren.capstone_project.MainActivity
 import com.beren.capstone_project.R
@@ -29,6 +27,10 @@ class CampaignsPageFragment : Fragment() {
     private lateinit var viewModel: CampaignsPageFragmentViewModel
     private lateinit var pdaoi: ProductsDaoInterface
     private lateinit var adapter: CampaignsItemAdapter
+
+   /* private lateinit var actionBar:ActionBar
+    private lateinit var myModelList:ArrayList<MyModel>
+    private lateinit var myAdapter: MyAdapter*/
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,30 +41,53 @@ class CampaignsPageFragment : Fragment() {
         pdaoi= ApiUtils.getProductsDaoInterface()
         design.campaignsPageFragment=this
 
-       /* (activity as AppCompatActivity).setSupportActionBar(design.toolbarProm)
-        imageViewUpArrow.setOnClickListener {
-            val intent = Intent(requireContext(),HomePageFragment::class.java)
-            startActivity(intent)
-        }*/
-        design.toolbarProm.setNavigationOnClickListener {
+
+       design.toolbarProm.setNavigationOnClickListener {
             val myIntent = Intent(activity, MainActivity::class.java)
             startActivity(myIntent)
         }
-       
+
         viewModel.campaignsItemList.observe(viewLifecycleOwner, { campaignsItemList ->
             adapter = CampaignsItemAdapter(requireContext(), campaignsItemList,viewModel)
             design.discountadapter = adapter
         })
-        design.rvDiscount.layoutManager = StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.HORIZONTAL)
+        design.rvitempro.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
 
         return design.root
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val temp: CampaignsPageFragmentViewModel by viewModels()
         viewModel=temp
+        viewModel.updateDiscount()
+
+       /* loadCards()
+        viewpagerpro.addOnPageChangeListener(object : ViewPager.OnPageChangeListener{
+            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+                val title=myModelList[position].title }
+            override fun onPageSelected(position: Int) {}
+            override fun onPageScrollStateChanged(state: Int) {}
+        })*/
 
     }
+  /*  private fun loadCards() {
+        myModelList= ArrayList()
+        myModelList.add(
+            MyModel(
+                "Scratch Eğitimi",
+                "asdvgfkjn",
+                "15/07/2021",
+                "R.drawable.arkaplan"))
+        myModelList.add(MyModel("Mbot Eğitimi","asdvgfkjn","15/07/2021","R.drawable.arkaplan"))
+        myModelList.add(MyModel("Arduino Eğitimi","asdvgfkjn","15/07/2021","R.drawable.arkaplan"))
+
+
+        myAdapter= MyAdapter(requireContext(),myModelList)
+
+        viewpagerpro.adapter=myAdapter
+        viewpagerpro.setPadding(100,0,100,0)
+    }*/
 
     fun updateDiscount(){
         viewModel.updateDiscount()

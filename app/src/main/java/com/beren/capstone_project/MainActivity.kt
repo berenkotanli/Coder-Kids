@@ -39,8 +39,8 @@ class MainActivity : AppCompatActivity() {
 
 
     }
- /*   fun createProduct(){
-        pdaoi.createProduct("berenkotanli","Uğur Böceği Eğitimi","499,99","Uğur Böceği çocukların kullanması için tasarlanmış yeni bir robottur. Renkli, kolay kullanımlı ve arkadaş canlısı bu robot, sıralama, tahmin ve problem çözmeyi çocuklara öğretmek için mükemmel bir araçtır. Sağlam yapısı ve renkli tasarımı sayesinde Uğur Böceği, çocukları oynamaya teşvik eder. Yön tuşları ile 40'a kadar komut Uğur Böceği'ne gönderilerek ileri, geri, sağ ve sola hareketi sağlanabilir. Yeşil renkli GO butonuna basıldığında Uğur Böceği harekete başlar. Uğur Böceği her bir komut adımında ışık ve sesle bildirim sağlayarak yazılmış olan programın adım adım takibini sağlar. Programın bitişini de aynı şekilde ışık ve sesli bir şekilde bildirir. Çocuklar Uğur Böceği ile tekrar tekrar oynamak isteyecek ve daha yaratıcı ve karmaşık programlar (komut sıralamaları) oluşturmaya yönelecektir. Uğur Böceği 6\" (~15cm) uzunluğunda adımlar ve 90 derece dönüşler ile hareket eder. Kompakt boyutu ve dayanıklı malzemesi sayesinde sınıf ortamlarında hiçbir problem olmadan kullanılabilir.", "138LmJR4Sixy64ijseJTpJpI4fOSIAs3O",0,0,10)
+    fun createProduct(){
+        pdaoi.createProduct("berenkotanli","Code.org Eğitimi Fırsatı","89,99","Erken kayıt yaptır, indirimden faydalan. Sadece 3 gün için geçerli!", "1xc_am-sVdzPjHUfRJ2Rb5FpdJVHgr2yS",1,0,10)
                 .enqueue(object : Callback<CRUDResponse>{
                     override fun onResponse(call: Call<CRUDResponse>?, response: Response<CRUDResponse>) {
                         Log.e("Başarı",response.body().success.toString())
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                 })
-    }*/
+    }
     fun getProducts(){
         pdaoi.getProducts("berenkotanli").enqueue(object : Callback<ProductsResponse>{
             override fun onResponse(call: Call<ProductsResponse>?, response: Response<ProductsResponse>) {

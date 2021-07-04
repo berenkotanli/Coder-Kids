@@ -13,10 +13,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import androidx.recyclerview.widget.*
 import com.beren.capstone_project.MainActivity
 import com.beren.capstone_project.R
 import com.beren.capstone_project.SwipeGesture
@@ -62,8 +59,8 @@ class CartPageFragment() : Fragment() {
             adapter = CartItemsAdapter(requireContext(), cartItemsList,viewModel)
             design.cartadapter = adapter
         })
-        design.rvCartItems.layoutManager = StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.HORIZONTAL)
-        design.rvCartItems.addItemDecoration(DividerItemDecoration(activity,StaggeredGridLayoutManager.HORIZONTAL))
+        design.rvCartItems.layoutManager = LinearLayoutManager(requireContext())
+        design.rvCartItems.addItemDecoration(DividerItemDecoration(activity,LinearLayoutManager.VERTICAL))
 
      /*  viewModel.cartItemsList.observe(viewLifecycleOwner,{
            if (it.size==0){
@@ -79,8 +76,6 @@ class CartPageFragment() : Fragment() {
         viewModel=temp
 
     }
-
-
     fun deleteCartItem(id:Int,cart_status:Int){
         viewModel.deleteCartItem(id,cart_status)
         viewModel.success.observe(viewLifecycleOwner,{

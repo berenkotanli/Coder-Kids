@@ -18,57 +18,74 @@
         android:layout_height="match_parent"
         tools:context=".fragments.HomePageFragment">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/press_start_2p"
+            android:text="CoderKIDS"
+            android:textColor="@color/malibu_blue"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbarHome"
+            app:layout_constraintEnd_toEndOf="@+id/toolbarHome"
+            app:layout_constraintStart_toStartOf="@+id/toolbarHome"
+            app:layout_constraintTop_toTopOf="@+id/toolbarHome" />
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbarHome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_margin="15dp"
+            android:layout_marginTop="16dp"
+            android:gravity="end"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
             app:labelVisibilityMode="unlabeled"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.533"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:title="@{ToolbarTitle}"
+            app:title="@{ToolbarTitle}">
 
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/press_start_2p"
-                android:text="CoderKIDS"
-                android:textColor="@color/malibu_blue"
-                android:textSize="18sp"
-                tools:layout_editor_absoluteX="134dp"
-                tools:layout_editor_absoluteY="11dp" />
-
-            <ImageView
-                android:id="@+id/homepagecart"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                app:actionLayout="@layout/cart_action_item"
-                app:showAsAction="always"
-                app:srcCompat="@drawable/ic_baseline_shopping_cart_24"
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end"
                 tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="27dp"
-                android:layout_gravity="right|end"
-                />
+                tools:layout_editor_absoluteY="3dp">
 
-            <TextView
-                android:id="@+id/textViewCartCount"
-                style="@style/TextAppearance.MaterialComponents.Caption"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_gravity="top|end"
-                android:layout_marginTop="-4dp"
-                android:layout_marginEnd="-4dp"
-                android:background="@drawable/badge_shape"
-                android:gravity="center"
-                android:text="5"
-                android:textColor="@color/white" />
+                <ImageView
+                    android:id="@+id/homepagecart"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    app:actionLayout="@layout/cart_action_item"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="parent"
+                    app:showAsAction="always"
+                    app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
+
+                <TextView
+                    android:id="@+id/textViewCartCount"
+                    style="@style/TextAppearance.MaterialComponents.Caption"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="end"
+                    android:background="@drawable/badge_shape"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toTopOf="@+id/homepagecart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </RelativeLayout>
+
+
         </androidx.appcompat.widget.Toolbar>
 
         <EditText
