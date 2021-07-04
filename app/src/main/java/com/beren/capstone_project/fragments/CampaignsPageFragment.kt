@@ -1,5 +1,6 @@
 package com.beren.capstone_project.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -7,9 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.beren.capstone_project.MainActivity
 import com.beren.capstone_project.R
 import com.beren.capstone_project.adapters.CampaignsItemAdapter
 import com.beren.capstone_project.databinding.FragmentCampaignsPageBinding
@@ -17,6 +21,7 @@ import com.beren.capstone_project.retrofit.ApiUtils
 import com.beren.capstone_project.retrofit.ProductsDaoInterface
 import com.beren.capstone_project.viewmodel.CampaignsPageFragmentViewModel
 import com.beren.capstone_project.viewmodel.CartPageFragmentViewModel
+import kotlinx.android.synthetic.main.fragment_campaigns_page.*
 
 class CampaignsPageFragment : Fragment() {
 
@@ -34,6 +39,16 @@ class CampaignsPageFragment : Fragment() {
         pdaoi= ApiUtils.getProductsDaoInterface()
         design.campaignsPageFragment=this
 
+       /* (activity as AppCompatActivity).setSupportActionBar(design.toolbarProm)
+        imageViewUpArrow.setOnClickListener {
+            val intent = Intent(requireContext(),HomePageFragment::class.java)
+            startActivity(intent)
+        }*/
+        design.toolbarProm.setNavigationOnClickListener {
+            val myIntent = Intent(activity, MainActivity::class.java)
+            startActivity(myIntent)
+        }
+       
         viewModel.campaignsItemList.observe(viewLifecycleOwner, { campaignsItemList ->
             adapter = CampaignsItemAdapter(requireContext(), campaignsItemList,viewModel)
             design.discountadapter = adapter

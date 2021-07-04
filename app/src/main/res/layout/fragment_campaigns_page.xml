@@ -19,19 +19,16 @@
 
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/toolbarProm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:background="#f8f4ff"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/go_back_icon">
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,14 +40,19 @@
             android:textSize="24sp"
             tools:layout_editor_absoluteX="134dp"
             tools:layout_editor_absoluteY="11dp" />
+<!--
 
         <ImageView
+            android:id="@+id/iconCartPage"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_gravity="right|end"
+            android:layout_gravity="end"
             android:src="@drawable/ic_baseline_shopping_cart_24"
-            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteX="100dp"
             tools:layout_editor_absoluteY="27dp" />
+-->
+
+
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,7 +69,7 @@
         app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+        app:layout_constraintTop_toBottomOf="@+id/toolbarProm">
 
         <ImageView
             android:layout_width="match_parent"

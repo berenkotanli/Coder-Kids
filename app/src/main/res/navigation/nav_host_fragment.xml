@@ -21,7 +21,11 @@
         android:id="@+id/campaignsPageFragment"
         android:name="com.beren.capstone_project.fragments.CampaignsPageFragment"
         android:label="fragment_campaigns_page"
-        tools:layout="@layout/fragment_campaigns_page" />
+        tools:layout="@layout/fragment_campaigns_page" >
+        <action
+            android:id="@+id/actionFromProm"
+            app:destination="@id/cartPageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/cartPageFragment"
         android:name="com.beren.capstone_project.fragments.CartPageFragment"

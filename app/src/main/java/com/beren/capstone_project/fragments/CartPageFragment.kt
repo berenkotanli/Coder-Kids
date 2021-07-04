@@ -1,6 +1,8 @@
 package com.beren.capstone_project.fragments
 
 import android.content.Context
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,12 +10,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.beren.capstone_project.MainActivity
 import com.beren.capstone_project.R
 import com.beren.capstone_project.SwipeGesture
 import com.beren.capstone_project.adapters.CartItemsAdapter
@@ -29,6 +33,7 @@ class CartPageFragment() : Fragment() {
     private lateinit var viewModel: CartPageFragmentViewModel
     private lateinit var pdaoi: ProductsDaoInterface
     private lateinit var adapter: CartItemsAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,6 +41,11 @@ class CartPageFragment() : Fragment() {
         design = DataBindingUtil.inflate(inflater,R.layout.fragment_cart_page, container, false)
         pdaoi= ApiUtils.getProductsDaoInterface()
         design.cartPageFragment=this
+
+        design.appbar.setNavigationOnClickListener {
+            val myIntent = Intent(activity, MainActivity::class.java)
+            startActivity(myIntent)
+        }
 
       //  design.emptyTxt
       /*  val swipegesture= object :SwipeGesture(requireContext()){

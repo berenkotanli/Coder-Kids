@@ -55,8 +55,6 @@ class LoginFragment : Fragment() {
                 val intent = Intent(getActivity(), MainActivity::class.java)
                 getActivity()?.startActivity(intent)
                 viewModel.user.observe(viewLifecycleOwner, { userInfo ->
-                   // Log.e("7",userInfo.toString())
-
                     val sharedPreferences= context?.getSharedPreferences("sharedPrefs",Context.MODE_PRIVATE)
                     val editor= sharedPreferences?.edit()
                     editor?.apply{
