@@ -125,31 +125,29 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextSearch" />
 
 
-       <!-- <TextView
+        <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_bold"
             android:text="Senin için seçtiklerimiz"
             android:textColor="@color/dark_text_color"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
--->
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_foryou"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="64dp"
+            android:layout_marginTop="2dp"
             app:adapter="@{adapter}"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <ImageView
             android:id="@+id/imageViewkodlama"
@@ -166,13 +164,15 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             android:fontFamily="@font/nunito_bold"
             android:text="Tasarım"
             android:textColor="@color/dark_text_color"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/textView9"
+            app:layout_constraintEnd_toStartOf="@+id/textView8"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textView8"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageViewkodlama" />
 
         <ImageView
@@ -190,13 +190,15 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             android:fontFamily="@font/nunito_bold"
             android:text="Kodlama"
             android:textColor="@color/dark_text_color"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/textView7"
+            app:layout_constraintEnd_toStartOf="@+id/textView9"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView7"
             app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
         <ImageView
@@ -214,13 +216,15 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:fontFamily="@font/nunito_bold"
             android:text="Robotik"
             android:textColor="@color/dark_text_color"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textView7"
+            app:layout_constraintStart_toEndOf="@+id/textView8"
             app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         <TextView
@@ -229,7 +233,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="6dp"
             android:fontFamily="@font/nunito_bold"
             android:text="Hoşgeldin Beren"
             android:textColor="@color/dark_text_color"

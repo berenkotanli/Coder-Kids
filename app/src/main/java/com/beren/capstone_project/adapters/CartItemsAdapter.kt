@@ -43,7 +43,7 @@ class CartItemsAdapter (var mContext: Context, var productList: List<Products>,v
         var id=holder.design.imageView
         Picasso.get().load(url).into(id);
         holder.design.title2Txt.text = product.urun_adi
-      /*  var totalprice=0
+       /* var totalprice=0
         for (i in productList){
             totalprice=totalprice+i.urun_fiyat.toInt()
         }
