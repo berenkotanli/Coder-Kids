@@ -11,9 +11,11 @@ class CartPageFragmentViewModel: ViewModel() {
     var success= MutableLiveData<Int>()
 
 
+
     init{
         fetchCartProducts()
         cartItemsList=pdaor.fetchCartItems()
+
         success=pdaor.cartSuccess()
     }
 
@@ -21,7 +23,7 @@ class CartPageFragmentViewModel: ViewModel() {
         pdaor.fetchCartProducts()
     }
     fun deleteCartItem(id:Int,cartStatus:Int){
-       // pdaor.fetchCartProducts()
         pdaor.updateCart(id,cartStatus)
+        fetchCartProducts()
     }
 }

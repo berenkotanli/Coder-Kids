@@ -4,18 +4,25 @@ import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.beren.capstone_project.databinding.CardDesignBinding
 import com.beren.capstone_project.entity.Products
 import com.beren.capstone_project.fragments.HomePageFragmentDirections
+import com.beren.capstone_project.viewmodel.CourseDetailsFragmentViewModel
+import com.beren.capstone_project.viewmodel.HomePageFragmentViewModel
 
 import com.squareup.picasso.Picasso
 
-class ProductsAdapter(var mContext: Context, var productList: List<Products>): RecyclerView.Adapter<ProductsAdapter.CardDesignKeeper>() {
+class ProductsAdapter(var mContext: Context, var productList: List<Products>,var viewModel:HomePageFragmentViewModel): RecyclerView.Adapter<ProductsAdapter.CardDesignKeeper>() {
 
     inner class CardDesignKeeper(productCardBinding: CardDesignBinding):RecyclerView.ViewHolder(productCardBinding.root){
         var design: CardDesignBinding
+
+
         init {
             this.design=productCardBinding
         }
@@ -44,13 +51,18 @@ class ProductsAdapter(var mContext: Context, var productList: List<Products>): R
                 holder.design.title.text = product.urun_adi
                 holder.design.fee.text = product.urun_fiyat
 
-                holder.design.cardConst.setOnClickListener {
+               holder.design.cardConst.setOnClickListener {
                     var transition= HomePageFragmentDirections.actionToDetails(product)
                     Navigation.findNavController(it).navigate(transition)
                 }
-               // holder.design.addBtn.set
+                holder.design.addBtn.setOnClickListener {
+                    viewModel.updateCart(product.id,1)
+                }
+
 }
     override fun getItemCount(): Int {
         return productList.size
     }
+
+
 }

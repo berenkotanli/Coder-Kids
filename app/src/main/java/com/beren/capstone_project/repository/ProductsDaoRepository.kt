@@ -18,6 +18,9 @@ class ProductsDaoRepository {
     private var discountValidate= MutableLiveData<Int>()
     private val cartProductsList:MutableLiveData<List<Products>>
     private val discountProductsList:MutableLiveData<List<Products>>
+    private var cartCountno= MutableLiveData<Int>()
+
+
 
     init {
         pdaoi=ApiUtils.getProductsDaoInterface()
@@ -69,6 +72,9 @@ class ProductsDaoRepository {
     fun discountSuccess():MutableLiveData<Int>{
         return discountValidate
     }
+    fun cartCount():MutableLiveData<Int>{
+        return cartCountno
+    }
 
     fun fetchCartProducts() {
         pdaoi.getProducts("berenkotanli").enqueue(object : Callback<ProductsResponse> {
@@ -90,6 +96,7 @@ class ProductsDaoRepository {
                     }
                 }
                 cartProductsList.value=arrayList
+                cartCountno.value=arrayList.size
                 }
             override fun onFailure(call: Call<ProductsResponse>?, t: Throwable?) {
             }

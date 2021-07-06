@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.beren.capstone_project.R
@@ -35,15 +36,20 @@ class HomePageFragment : Fragment() {
     ): View? {
          design = DataBindingUtil.inflate(inflater, R.layout.fragment_home_page, container, false)
         loadData()
-        loadItemCount()
+        //loadItemCount()
 
         (activity as AppCompatActivity).setSupportActionBar(design.toolbarHome)
 
 
         viewModel.productsList.observe(viewLifecycleOwner, { productsList ->
-             adapter = ProductsAdapter(requireContext(), productsList)
+             adapter = ProductsAdapter(requireContext(), productsList,viewModel)
              design.adapter = adapter
+
          })
+        viewModel.cartCount.observe(viewLifecycleOwner,{
+            design.textViewCartCount.text=it.toString()
+
+        })
         design.imageViewkodlama.setOnClickListener {
             val view=View.inflate(requireContext(),R.layout.dialog_view,null)
             val builder=AlertDialog.Builder(requireContext())
@@ -71,7 +77,7 @@ class HomePageFragment : Fragment() {
         design.homepagecart.setOnClickListener {
             findNavController().navigate(R.id.actionToCart)
         }
-        design.rvForyou.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
+        design.rvForyou.layoutManager = GridLayoutManager(requireContext(),1, GridLayoutManager.HORIZONTAL,false)
         return design.root
     }
 
@@ -88,11 +94,11 @@ class HomePageFragment : Fragment() {
 
         design.textViewWelcome.text="Hoşgeldin $savedName"
     }
-    fun loadItemCount(){
+   /* fun loadItemCount(){
         val sharedPreferences= context?.getSharedPreferences("sharedPref", Context.MODE_PRIVATE)
         val savedCount= sharedPreferences?.getString("STRING_ITEM_COUNT","0")
 
         design.textViewCartCount.text=savedCount
 
-    }
+    }*/
 }
