@@ -90,7 +90,7 @@
                         android:gravity="right"
                         android:text="419,98₺"
                         android:textColor="@color/dark_text_color"
-                        android:textSize="24sp" />
+                        android:textSize="20sp" />
 
 
                 </LinearLayout>

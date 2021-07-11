@@ -19,8 +19,7 @@ class ProductsDaoRepository {
     private val cartProductsList:MutableLiveData<List<Products>>
     private val discountProductsList:MutableLiveData<List<Products>>
     private var cartCountno= MutableLiveData<Int>()
-
-
+    private val totalPayment : MutableLiveData<Double>
 
     init {
         pdaoi=ApiUtils.getProductsDaoInterface()
@@ -29,6 +28,10 @@ class ProductsDaoRepository {
         discountProductsList=MutableLiveData()
         cartValidate=MutableLiveData()
         discountValidate=MutableLiveData()
+        totalPayment= MutableLiveData()
+        totalPayment.value=0.0
+
+
     }
     fun fetchProducts():MutableLiveData<List<Products>>{
         return productsList
@@ -38,6 +41,9 @@ class ProductsDaoRepository {
     }
     fun fetchDiscountItems():MutableLiveData<List<Products>>{
         return discountProductsList
+    }
+    fun calculateTotalPayment():MutableLiveData<Double>{
+        return totalPayment
     }
     fun createProduct(ownerName:String,productName:String,productPrice:String,productDescription:String,productImageUrl:String,discountStatus:Int,cartStatus:Int,productId:Int){
         pdaoi.createProduct(ownerName,productName,productPrice,productDescription,productImageUrl,discountStatus,cartStatus,productId)
@@ -80,7 +86,9 @@ class ProductsDaoRepository {
         pdaoi.getProducts("berenkotanli").enqueue(object : Callback<ProductsResponse> {
             override fun onResponse(call: Call<ProductsResponse>?, response: Response<ProductsResponse>) {
                 val list = response.body().products
+                var total=0.0
                 var arrayList=arrayListOf<Products>()
+                var priceList=arrayListOf<Double>()
                 for (p in list){
                     Log.e("************","************")
 
@@ -93,10 +101,15 @@ class ProductsDaoRepository {
                     Log.e("6",p.sepet_durum.toString())
                     if (p.sepet_durum==1){
                         arrayList.add(p)
+                        //priceList.add(p.urun_fiyat.toDouble())
+                        total += p.urun_fiyat.toDouble()
+
                     }
                 }
                 cartProductsList.value=arrayList
                 cartCountno.value=arrayList.size
+                totalPayment.value=total
+
                 }
             override fun onFailure(call: Call<ProductsResponse>?, t: Throwable?) {
             }

@@ -66,4 +66,5 @@ class CartItemsAdapter (var mContext: Context, var productList: List<Products>,v
    /* fun deleteItem(i:Int){
         viewModel.deleteCartItem(i,0)
     }*/
+
 }

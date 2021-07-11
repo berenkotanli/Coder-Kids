@@ -53,7 +53,7 @@ class CourseDetailsFragment : Fragment() {
        viewModel.success.observe(viewLifecycleOwner,{
             println(it)
             if (it == 1) {
-                Toast.makeText(requireContext(),"Sepete eklendi",Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(),"Ürün sepete eklendi",Toast.LENGTH_LONG).show()
                 Log.e("55","eklendi herhalde")
             } else if (it == 0) {
                 Toast.makeText(requireContext(), "Giriş Yapılamadı!", Toast.LENGTH_SHORT).show()

@@ -57,6 +57,7 @@ class ProductsAdapter(var mContext: Context, var productList: List<Products>,var
                 }
                 holder.design.addBtn.setOnClickListener {
                     viewModel.updateCart(product.id,1)
+                    Toast.makeText(mContext,"Ürün sepete eklendi",Toast.LENGTH_LONG).show()
                 }
 
 }

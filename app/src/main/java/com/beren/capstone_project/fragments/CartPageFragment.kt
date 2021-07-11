@@ -60,14 +60,15 @@ class CartPageFragment() : Fragment() {
         viewModel.cartItemsList.observe(viewLifecycleOwner, { cartItemsList ->
             adapter = CartItemsAdapter(requireContext(), cartItemsList,viewModel)
             design.cartadapter = adapter
-            var totalPrice=0.00
-            for (i in cartItemsList){
-                totalPrice += i.urun_fiyat.toFloat()
-                design.totalpricecart.text=totalPrice.toString()
-                Log.e("44",totalPrice.toString())
 
-            }
+            viewModel.totalPayment.observe(viewLifecycleOwner,{total->
+
+                design.totalpricecart.text="$total₺"
+            })
+
+
         })
+
 
         design.rvCartItems.layoutManager = LinearLayoutManager(requireContext())
       //  design.rvCartItems.addItemDecoration(DividerItemDecoration(activity,LinearLayoutManager.VERTICAL))

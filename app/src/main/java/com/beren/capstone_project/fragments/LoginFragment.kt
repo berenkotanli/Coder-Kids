@@ -64,7 +64,7 @@ class LoginFragment : Fragment() {
                             putString("STRING_PHONE",i.telefon)
                         }
                     }?.apply()
-                    Toast.makeText(requireContext(),"Giriş başarılı",Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(),"Giriş başarılı",Toast.LENGTH_SHORT).show()
 
                 })
             } else if (it == 0) {

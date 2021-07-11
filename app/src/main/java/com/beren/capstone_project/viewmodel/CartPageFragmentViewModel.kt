@@ -9,14 +9,15 @@ class CartPageFragmentViewModel: ViewModel() {
     var cartItemsList= MutableLiveData<List<Products>>()
     val pdaor=ProductsDaoRepository()
     var success= MutableLiveData<Int>()
+    var totalPayment:MutableLiveData<Double>
 
 
 
     init{
         fetchCartProducts()
         cartItemsList=pdaor.fetchCartItems()
-
         success=pdaor.cartSuccess()
+        totalPayment=pdaor.calculateTotalPayment()
     }
 
     fun fetchCartProducts(){
@@ -26,4 +27,5 @@ class CartPageFragmentViewModel: ViewModel() {
         pdaor.updateCart(id,cartStatus)
         fetchCartProducts()
     }
+
 }
