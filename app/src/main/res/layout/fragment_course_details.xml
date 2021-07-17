@@ -37,13 +37,13 @@
 
                 <ImageView
                     android:layout_width="320dp"
-                    android:layout_height="200dp"
+                    android:layout_height="220dp"
                     android:layout_gravity="center|end"
                     android:layout_marginBottom="15dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/detailsblue"
+                    android:src="@drawable/fordetailpage"
                     app:layout_collapseMode="parallax"
-                    tools:srcCompat="@drawable/detailsblue" />
+                    tools:srcCompat="@drawable/fordetailpage" />
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
