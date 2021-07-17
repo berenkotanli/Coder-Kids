@@ -11,14 +11,13 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.beren.capstone_project.MainActivity
+import com.beren.capstone_project.activities.MainActivity
 import com.beren.capstone_project.R
 import com.beren.capstone_project.adapters.CampaignsItemAdapter
 import com.beren.capstone_project.databinding.FragmentCampaignsPageBinding
 import com.beren.capstone_project.retrofit.ApiUtils
 import com.beren.capstone_project.retrofit.ProductsDaoInterface
 import com.beren.capstone_project.viewmodel.CampaignsPageFragmentViewModel
-import com.beren.capstone_project.viewmodel.CartPageFragmentViewModel
 import kotlinx.android.synthetic.main.fragment_campaigns_page.*
 
 class CampaignsPageFragment : Fragment() {

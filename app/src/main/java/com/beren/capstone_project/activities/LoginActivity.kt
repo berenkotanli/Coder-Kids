@@ -1,20 +1,16 @@
-package com.beren.capstone_project
+package com.beren.capstone_project.activities
 
 import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import com.beren.capstone_project.R
 import com.beren.capstone_project.adapters.ViewPagerAdapter
-import com.beren.capstone_project.entity.ProductsResponse
 import com.beren.capstone_project.fragments.LoginFragment
 import com.beren.capstone_project.fragments.SignupFragment
 import com.beren.capstone_project.retrofit.ApiUtils
 import com.beren.capstone_project.retrofit.ProductsDaoInterface
 
 import kotlinx.android.synthetic.main.activity_login.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class LoginActivity : AppCompatActivity() {

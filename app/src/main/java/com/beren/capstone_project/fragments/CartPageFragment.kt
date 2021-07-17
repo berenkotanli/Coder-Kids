@@ -1,8 +1,6 @@
 package com.beren.capstone_project.fragments
 
-import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,19 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.*
-import com.beren.capstone_project.MainActivity
+import com.beren.capstone_project.activities.MainActivity
 import com.beren.capstone_project.R
-import com.beren.capstone_project.SwipeGesture
 import com.beren.capstone_project.adapters.CartItemsAdapter
 import com.beren.capstone_project.databinding.FragmentCartPageBinding
 import com.beren.capstone_project.retrofit.ApiUtils
 import com.beren.capstone_project.retrofit.ProductsDaoInterface
 import com.beren.capstone_project.viewmodel.CartPageFragmentViewModel
-import kotlinx.android.synthetic.main.fragment_cart_page.*
 
 
 class CartPageFragment() : Fragment() {

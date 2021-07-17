@@ -1,17 +1,15 @@
-package com.beren.capstone_project
+package com.beren.capstone_project.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.beren.capstone_project.R
 import com.beren.capstone_project.entity.CRUDResponse
 import com.beren.capstone_project.entity.ProductsResponse
 import com.beren.capstone_project.retrofit.ApiUtils
 import com.beren.capstone_project.retrofit.ProductsDaoInterface
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
