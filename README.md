@@ -6,8 +6,7 @@ An e-learning app with coding and design lessons for kids :girl::boy:
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-      <ul>
-      </ul>
+     
     </li>
     <li>
       <a href="#Features">Pages</a>
@@ -22,4 +21,6 @@ Coder Kids is an e-commerce Android application written in Kotlin that aims to i
 * Collapsing toolbar is used on the detail page.
 * Used viewpager2 on login/signup pages.
 * Cart icon on the homepage is updated instantly in case of adding to / removing from basket.
+  
+## Pages
   
