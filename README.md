@@ -21,7 +21,7 @@ Coder Kids is an e-commerce Android application written in Kotlin that aims to i
 * Made with Retrofit, Picasso, MVVM architecture (ViewModel, LiveData), ViewPager2, Recyclerview.
 * Collapsing toolbar is used on the detail page.
 * Used viewpager2 on login/signup pages.
-* Cart icon on the homepage is updated instantly in case of adding to / removing from basket.
+* Cart icon on the homepage is updated instantly in case of adding to / removing from cart.
   
 ## Pages
   - [Splash and Onboarding Pages](#splashscreen)
