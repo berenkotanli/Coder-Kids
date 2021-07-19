@@ -6,7 +6,8 @@ An e-learning app with coding and design lessons for kids :girl::boy:
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-     
+      <ul>
+      </ul>
     </li>
     <li>
       <a href="#Features">Pages</a>
