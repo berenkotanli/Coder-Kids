@@ -25,4 +25,5 @@ Coder Kids is an e-commerce Android application written in Kotlin that aims to i
   
 ## Pages
  - [Splash Screen](#Splash Screen)
+  - [GitHub Actions 🤖](#github-actions-)
   
