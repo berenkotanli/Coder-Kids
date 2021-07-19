@@ -24,4 +24,5 @@ Coder Kids is an e-commerce Android application written in Kotlin that aims to i
 * Cart icon on the homepage is updated instantly in case of adding to / removing from basket.
   
 ## Pages
+ - [Splash Screen](#Splash Screen)
   
