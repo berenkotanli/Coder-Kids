@@ -15,7 +15,7 @@ An e-learning app with coding and design lessons for kids :girl::boy:
   
 ## About The Project
 
-Coder Kids is an e-commerce Android application that aims to introduce children to coding at a young age and start their development early. In the app, there are various courses created for children such as 3D design with Tinkercad, coding with Scratch, introduction to Python, robotic coding with Arduino etc.
+Coder Kids is an e-commerce Android application written in Kotlin that aims to introduce children to coding at a young age and start their development early. In the app, there are various courses created for children such as 3D design with Tinkercad, coding with Scratch, introduction to Python, robotic coding with Arduino etc.
 
 **Features**:
 * Made with Retrofit, Picasso, MVVM architecture (ViewModel, LiveData), ViewPager2, Recyclerview.
